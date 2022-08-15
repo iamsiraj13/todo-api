@@ -37,7 +37,8 @@ app.use(limiter)
 let URI = 'mongodb://localhost:27017/Todo'
 let option = {
     user:'',
-    pass:''
+    pass:'',
+    autoIndex:true
 }
 mongoose.connect(URI, option,(err)=>{
     if(err){
@@ -46,6 +47,9 @@ mongoose.connect(URI, option,(err)=>{
         console.log("Database Connected")
     }
 })
+
+// Routing Implement
+app.use('/api',router)
 
 // Unidefined Routing implement
 
