@@ -6,10 +6,9 @@ const DataScema = mongoose.Schema(
     TodoTitle: { type: String },
     TodoDesc: { type: String },
     TodoStatus: { type: String },
-    TodoDate: { type: Date },
-    TodoCreateDate: { type: Date },
+    TodoCreateDate: { type: Date,default:Date.now() },
+    TodoUpdateDate: { type: Date,default:Date.now() },
   },
-  { timestamps: true },
   {
     versionKey: false,
   }

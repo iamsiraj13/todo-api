@@ -5,7 +5,7 @@ const {
   SelectProfile,
   UpdateProfile,
 } = require("../controllers/ProfileController");
-const { CreateTodo, SelectTodo } = require("../controllers/TodoController");
+const { CreateTodo, SelectTodo, UpdateTodo, UpdateTodoStatus, DeleteTodo } = require("../controllers/TodoController");
 const AuthVerify = require("../middleware/AuthVerify");
 const router = express.Router();
 
@@ -19,5 +19,8 @@ router.post("/UpdateProfile",AuthVerify, UpdateProfile);
 // create todo 
 router.post('/CreateTodo',AuthVerify,CreateTodo)
 router.get('/SelectTodo',AuthVerify,SelectTodo)
+router.post('/UpdateTodo',AuthVerify,UpdateTodo)
+router.post('/UpdateTodoStatus',AuthVerify,UpdateTodoStatus)
+router.post('/DeleteTodo',AuthVerify,DeleteTodo)
 
 module.exports = router;
