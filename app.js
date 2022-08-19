@@ -31,7 +31,7 @@ const limiter = rateLimit({
     Max:3000
 })
 
-app.use(limiter)
+// app.use(limiter)
 
 // Mongod DB Connection 
 let URI = 'mongodb://localhost:27017/Todo'

@@ -94,3 +94,38 @@ exports.DeleteTodo=(req,res)=>{
       }
   })
 }
+
+ // select todo by status
+exports.SelectTodoByStatus = (req, res) => {
+  let username = req.headers["username"];
+  const {TodoStatus} = req.body;
+
+
+  TodoModle.find({ UserName: username ,TodoStatus:TodoStatus}, (error, data) => {
+
+    if (error) {
+      res.status(400).json({ status: "Fail" });
+    } else {
+      res
+        .status(200)
+        .json({ status: "Todo get success", data: data});
+    }
+  });
+};
+ // select todo by status
+exports.SelectTodoByDate = (req, res) => {
+  let username = req.headers["username"];
+  const {TodoStatus} = req.body;
+  
+  TodoModle.find({ UserName: username ,TodoStatus:TodoStatus}, (error, data) => {
+
+    if (error) {
+      res.status(400).json({ status: "Fail" });
+    } else {
+      res
+        .status(200)
+        .json({ status: "Todo get success", data: data});
+    }
+  });
+};
+
