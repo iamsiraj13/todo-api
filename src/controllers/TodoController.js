@@ -115,9 +115,9 @@ exports.SelectTodoByStatus = (req, res) => {
  // select todo by status
 exports.SelectTodoByDate = (req, res) => {
   let username = req.headers["username"];
-  const {TodoStatus} = req.body;
-  
-  TodoModle.find({ UserName: username ,TodoStatus:TodoStatus}, (error, data) => {
+  const {FromDate, ToDate} = req.body;
+
+  TodoModle.find({ UserName: username,TodoCreateDate:{$gte:new Date(FromDate),$lte:new Date(ToDate)}}, (error, data) => {
 
     if (error) {
       res.status(400).json({ status: "Fail" });
