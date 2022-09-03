@@ -34,7 +34,7 @@ const limiter = rateLimit({
 // app.use(limiter)
 
 // Mongod DB Connection 
-let URI = 'mongodb://localhost:27017/Todo'
+let URI = 'mongodb+srv://iamsiraj13:iamsiraj13@cluster0.4tdkj.mongodb.net/?retryWrites=true&w=majority'
 let option = {
     user:'',
     pass:'',
